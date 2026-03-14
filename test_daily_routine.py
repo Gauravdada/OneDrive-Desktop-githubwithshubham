@@ -121,7 +121,8 @@ class TestSaveAndLoad(unittest.TestCase):
             os.unlink(filepath)
 
     def test_load_nonexistent(self):
-        loaded = load_routine("/tmp/nonexistent_file_12345.json")
+        path = os.path.join(tempfile.gettempdir(), "nonexistent_file_12345.json")
+        loaded = load_routine(path)
         self.assertEqual(loaded, [])
 
 

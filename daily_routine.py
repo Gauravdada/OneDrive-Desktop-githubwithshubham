@@ -67,9 +67,8 @@ def view_routine(tasks):
     print(f"{'#':<4} {'Time':<8} {'Status':<10} {'Task'}")
     print("-" * 45)
     for i, task in enumerate(tasks, 1):
-        status = "Done" if task["done"] else "Pending"
-        marker = "[x]" if task["done"] else "[ ]"
-        print(f"{i:<4} {task['time']:<8} {marker} {status:<7} {task['task']}")
+        status = "[x] Done" if task["done"] else "[ ] Pending"
+        print(f"{i:<4} {task['time']:<8} {status:<12} {task['task']}")
     done_count = sum(1 for t in tasks if t["done"])
     print("-" * 45)
     print(f"Progress: {done_count}/{len(tasks)} tasks completed")
